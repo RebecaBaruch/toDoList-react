@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+Este é o meu primeiro projeto em React JS. Aprendendo a lidar com componentes, states e props, criando uma lista de tarefas.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
