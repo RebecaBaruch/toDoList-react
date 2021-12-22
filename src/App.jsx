@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Text } from 'react';
 import {v4 as uuidv4} from 'uuid';
 import { BrowserRouter as Router, Routes, Route   } from 'react-router-dom';
 
@@ -52,34 +52,33 @@ const App = () => {
     
     setTasks(newTasks);
   }
+  console.log("teste");
 
   return(
       <Router>
           <div className='container'>
-                <Header />
+              <Header />
 
-                <Routes>
-                    <Route 
-                            path="/" 
-                            exact 
-                            render={() => (
-                                <>
-                                      <AddTask handleTaskAddition={handleTaskAddition} />
-                                      <Tasks 
-                                          tasks={tasks} 
-                                          handleTaskClick={handleTaskClick} 
-                                          handleTaskDeletion={handleTaskDeletion}
-                                      />
-                                </>
-                            )}
-                        />
+              <Routes>
+                <Route 
+                    path="/" 
+                    render={() => (
+                        <>
+                            <AddTask handleTaskAddition={handleTaskAddition} />
+                            <Tasks 
+                                tasks={tasks} 
+                                handleTaskClick={handleTaskClick} 
+                                handleTaskDeletion={handleTaskDeletion}
+                            />
+                        </>
+                    )}
+                />
 
-                     <Route 
-                            path="/:taskTitle" 
-                            exact
-                            component={TasksDetails}
-                     />
-                </Routes>
+                <Route 
+                    path="/:taskTitle" 
+                    component={TasksDetails}
+                />
+              </Routes>
           </div>
       </Router>
   );
