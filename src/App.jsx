@@ -60,24 +60,19 @@ const App = () => {
               <Header />
 
               <Routes>
-                <Route 
-                    path="/" 
-                    render={() => (
-                        <>
-                            <AddTask handleTaskAddition={handleTaskAddition} />
-                            <Tasks 
-                                tasks={tasks} 
-                                handleTaskClick={handleTaskClick} 
-                                handleTaskDeletion={handleTaskDeletion}
-                            />
-                        </>
+                  <Route path="/" exact render={() => (
+                      <>
+                        <AddTask handleTaskAddition={handleTaskAddition} />
+                        <Tasks 
+                          tasks={tasks} 
+                          handleTaskClick={handleTaskClick} 
+                          handleTaskDeletion={handleTaskDeletion}
+                        />
+                      </>
                     )}
-                />
+                  />
 
-                <Route 
-                    path="/:taskTitle" 
-                    component={TasksDetails}
-                />
+                  <Route path="/:taskTitle" component={TasksDetails}/> 
               </Routes>
           </div>
       </Router>
